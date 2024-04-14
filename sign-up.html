@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+   
+    .signup-form {
+      width: 400px;
+      margin: 50px auto;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-lg-6 col-sm-12 mx-auto">
+      <div class="signup-form">
+        <h2 class="text-center">Sign Up</h2>
+        <form action="signup_process.php" method="post">
+
+          <div class="form-group">
+            <select class="form-control" name="userType" id="userType" required="required">
+              <option value="" disabled selected>Select User Type</option>
+              <option value="student">Student</option>
+              <option value="teacher">Teacher</option>
+            </select>
+          </div>
+       
+          <div id="studentFields" style="display: none;">
+            <div class="form-group">
+              <input type="text" class="form-control" name="studentNumber" placeholder="Student Number" required="required" disabled>
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control" name="schoolEmail" placeholder="School Email" required="required" disabled>
+            </div>
+          </div>
+          <div id="teacherFields" style="display: none;">
+            <div class="form-group">
+              <input type="text" class="form-control" name="teacherName" placeholder="Name" required="required" disabled>
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control" name="schoolEmail" placeholder="School Email" required="required" disabled>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" name="username" placeholder="Username" required="required" disabled>
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" name="password" placeholder="Password" required="required" disabled>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block" id="submitBtn" disabled>Sign Up</button>
+          </div>
+        </form>
+        <p class="text-center">Already have an account? <a href="index-signedin.html">Log in</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById('userType').addEventListener('change', function() {
+    var userType = this.value;
+    var studentFields = document.getElementById('studentFields');
+    var teacherFields = document.getElementById('teacherFields');
+    var usernameField = document.querySelector('input[name="username"]');
+    var passwordField = document.querySelector('input[name="password"]');
+    var submitBtn = document.getElementById('submitBtn');
+
+    if (userType === 'student') {
+      studentFields.style.display = 'block';
+      teacherFields.style.display = 'none';
+      studentFields.querySelectorAll('input').forEach(input => input.disabled = false);
+      teacherFields.querySelectorAll('input').forEach(input => input.disabled = true);
+    } else if (userType === 'teacher') {
+      studentFields.style.display = 'none';
+      teacherFields.style.display = 'block';
+      teacherFields.querySelectorAll('input').forEach(input => input.disabled = false);
+      studentFields.querySelectorAll('input').forEach(input => input.disabled = true);
+    } else {
+      studentFields.style.display = 'none';
+      teacherFields.style.display = 'none';
+      studentFields.querySelectorAll('input').forEach(input => input.disabled = true);
+      teacherFields.querySelectorAll('input').forEach(input => input.disabled = true);
+    }
+
+    if (userType !== '') {
+      usernameField.disabled = false;
+      passwordField.disabled = false;
+      submitBtn.disabled = false;
+    } else {
+      usernameField.disabled = true;
+      passwordField.disabled = true;
+      submitBtn.disabled = true;
+    }
+  });
+</script>
+
+</body>
+</html>

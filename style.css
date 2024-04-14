@@ -1,0 +1,20 @@
+body {
+    color:white
+}
+
+.custom-navbar {
+    background-color: yellow; /* Your custom color */
+}
+
+.custom-navbar .nav-link {
+    color: white; /* Font color for navbar links */
+}
+
+.custom-navbar .nav-link:hover {
+    color: blue; /* Font color for navbar links on hover */
+}
+
+
+.brand{
+    font-size: 12pt;
+}
