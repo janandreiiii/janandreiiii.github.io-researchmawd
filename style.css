@@ -1,20 +1,52 @@
-body {
-    color:white
-}
+ /* Material You Color Palette */
+ :root {
+    --primary-color: #FFC94A; /* Adjust to your preference */
+    --secondary-color: #03dac6; /* Adjust to your preference */
+  }
 
-.custom-navbar {
-    background-color: yellow; /* Your custom color */
-}
+  /* Add your custom styles here */
+  body {
+    font-family: 'Roboto', sans-serif; /* Example font, you can change it */
+    background-color: #FFF6DA;
+  }
+  .rounded-corner {
+    border-radius: 10px;
+  }
+  .navbar {
+    border-radius: 10px;
+    color: black;
+  
+  }
+  .nav-link {
+    color: #000;
+  }
+  .logo-img {
+    width: 0.5in; /* Set width as per your requirement */
+    height: 0.5in;
+  }
+  .carousel-item img {
+    max-width: 100%;
+    height: auto;
+  }
+  .card {
+    transition: transform 0.3s ease;
+  }
 
-.custom-navbar .nav-link {
-    color: white; /* Font color for navbar links */
-}
+  .card:hover {
+    transform: translateY(-10px);
+  }
+   /* Define the styles for the blinking cursor */
+   .typing-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 18px;
+    background-color: none;
+    animation: blink 1s infinite;
+  }
 
-.custom-navbar .nav-link:hover {
-    color: blue; /* Font color for navbar links on hover */
-}
-
-
-.brand{
-    font-size: 12pt;
-}
+  /* Define the keyframes for the blinking cursor */
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }

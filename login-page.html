@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Signup Page</title>
+  <title>Login Page</title>
   <!-- Google Fonts for Material You design -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500&display=swap">
   <!-- Custom CSS for Material You inspired design -->
   <style>
-  body {
+    body {
       font-family: 'Google Sans', sans-serif;
-      background-color: #f3f4f6;
+      background-color: #FFF6DA;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -18,7 +18,7 @@
       margin: 0;
     }
 
-    .signup-container {
+    .login-container {
       background-color: #fff;
       border-radius: 16px;
       box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
@@ -27,7 +27,7 @@
       text-align: center;
     }
 
-    .signup-container h2 {
+    .login-container h2 {
       margin-bottom: 30px;
     }
 
@@ -46,29 +46,11 @@
 
     .form-group input:focus {
       outline: none;
-      border-color: #6200ee;
-    }
-
-    .select-group {
-      margin-bottom: 20px;
-    }
-
-    .select-group select {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      font-size: 16px;
-      transition: border-color 0.3s ease;
-    }
-
-    .select-group select:focus {
-      outline: none;
-      border-color: #6200ee;
+      border-color: yellow;
     }
 
     .btn {
-      background-color: #6200ee;
+      background-color: #0d6efd;
       color: #fff;
       border: none;
       border-radius: 8px;
@@ -79,27 +61,24 @@
     }
 
     .btn:hover {
-      background-color: #3700b3;
-    }  </style>
+      background-color: orange;
+    }
+  </style>
 </head>
 <body>
-  <div class="signup-container">
-    <h2>Sign Up</h2>
-    <form action="signup_process.php" method="POST">
+  <div class="login-container">
+    <h2>Login</h2>
+    <form action="#">
       <div class="form-group">
-        <input type="text" name="username" placeholder="Username" required>
+        <input type="text" placeholder="Username" required>
       </div>
       <div class="form-group">
-        <input type="password" name="password" placeholder="Password" required>
+        <input type="password" placeholder="Password" required>
       </div>
-      <div class="select-group">
-        <select name="user_type">
-          <option value="student">Student</option>
-          <option value="teacher">Teacher</option>
-        </select>
-      </div>
-      <button type="submit" class="btn">Sign Up</button>
+      <button type="submit" class="btn">Login</button>
     </form>
+    <br>
+    <p1>No account? Signup <a href="sign-up.html">Here</a>
   </div>
 </body>
 </html>

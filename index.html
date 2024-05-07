@@ -1,72 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Landing Page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Material You Design Landing Page</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script> // Function to simulate typing effect
+  function typeEffect() {
+    // Text to be typed
+    var text = "Learn while you play";
+    // Speed of typing in milliseconds
+    var speed = 100;
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    // Initialize counter
+    var i = 0;
+
+    // Interval function to simulate typing
+    var typeInterval = setInterval(function() {
+      // Append next character to the typing text
+      document.getElementById("typing-text").innerHTML += text.charAt(i);
+      // Increment counter
+      i++;
+      // Check if all characters are typed
+      if (i === text.length) {
+        // Stop the typing animation
+        clearInterval(typeInterval);
+      }
+    }, speed);
+  }
+
+  // Call the typing effect function when the page is loaded
+  window.onload = function() {
+    typeEffect();
+  };</script>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light custom-navbar">
-        <a class="navbar-brand" href="#">
-            <img src="logo.png" alt="Logo" height="40">
-            Brand
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <button class="btn btn-primary my-2 my-sm-0 ml-auto d-lg-none" data-toggle="modal" data-target="#loginModal">Login</button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="support.html">Support <span class="sr-only">(current)</span></a>
-                </li>
-                        
-                    </div>
-
-            </ul>
-        </div>
-        <!-- Move login button outside of collapsible area -->
-        <button class="btn btn-primary my-2 my-sm-0 d-none d-lg-block" data-toggle="modal" data-target="#loginModal">Login</button>
-    </nav>
-    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="loginModalLabel">Login</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">User Name</label>
-                            <input type="id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Student ID">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Login</button>
-                        <p3 type="signup"> Don't have account? Sign up <a href="sign-up.html">here</a></p3>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-     <!-- Signup Modal -->
-     <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
-        <!-- Your signup modal content goes here -->
-    </div>
+<br>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: var(--primary-color);">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+        <img src="logo1.png" alt="Logo" class="logo-img">
+        Brain Scholar
+      </a>
     
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link text-black" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-black" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-black" href="#">Contact</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link btn rounded-corner" style="color: black; background-color: #5BBCFF; " href="login.php">Login</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<br>
+<!-- Container for the typing animation -->
+<div id="typing-container">
+  <!-- Placeholder for the text with a blinking cursor -->
+  <h1 id="typing-text"><span class="typing-cursor"></span></h1>
+</div>
+<br>
+<!-- Carousel -->
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://via.placeholder.com/1200x400" class="d-block w-100 rounded-corner" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://via.placeholder.com/1200x400" class="d-block w-100 rounded-corner" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://via.placeholder.com/1200x400" class="d-block w-100 rounded-corner" alt="...">
+    </div>
+  </div>
+</div>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <img src="https://via.placeholder.com/300" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card 1</h5>
+          <p class="card-text">This is a sample card with some sample text.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <img src="https://via.placeholder.com/300" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card 2</h5>
+          <p class="card-text">This is a sample card with some sample text.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <img src="https://via.placeholder.com/300" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card 3</h5>
+          <p class="card-text">This is a sample card with some sample text.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Add more cards as needed -->
+  </div>
+</div>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
